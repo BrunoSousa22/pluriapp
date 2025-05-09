@@ -14,6 +14,9 @@ idade = st.number_input("A sua idade:", min_value=0, max_value=120, step=1)
 # Number input
 morada = st.text_input("A sua morada:")
 
+# Number input
+cidade = st.text_input("A sua cidade:")
+
 # Button
 if st.button("Mostrar mensagem"):
     if name:
