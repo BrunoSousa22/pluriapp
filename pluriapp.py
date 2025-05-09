@@ -3,7 +3,7 @@ import pandas as pd
 
 # Page title
 st.set_page_config(page_title="Demo App", layout="centered")
-st.title("🚀 BOOOOOOOAS :D !")
+st.title("🚀 A Equipa de Stocks é a melhor!")
 
 # Text input
 name = st.text_input("Insira o seu nome:")
