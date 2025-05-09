@@ -16,8 +16,6 @@ if "resposta2" not in st.session_state:
 if st.session_state.etapa == 0:
     if st.button("Clicar aqui para uma surpresa"):
         st.session_state.etapa = 1
-        st.experimental_rerun()
-
 # Etapa 1: Primeira pergunta
 elif st.session_state.etapa == 1:
     st.session_state.resposta1 = st.radio(
@@ -25,8 +23,6 @@ elif st.session_state.etapa == 1:
     )
 
     if st.session_state.resposta1 == "Sim":
-        st.session_state.etapa = 2
-        st.experimental_rerun()
     elif st.session_state.resposta1 == "Não":
         st.write("Nem sabes o que perdes 😢")
 
@@ -40,11 +36,9 @@ elif st.session_state.etapa == 2:
         st.balloons()
         st.success("🎉 Que bom que estavas pronto!")
         st.session_state.etapa = 3
-        st.experimental_rerun()
     elif st.session_state.resposta2 == "Não":
         st.write("Eu vi logo 😄")
         st.session_state.etapa = 3
-        st.experimental_rerun()
 
 # Etapa 3: Final
 elif st.session_state.etapa == 3:
