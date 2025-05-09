@@ -11,10 +11,13 @@ name = st.text_input("Insira o seu nome:")
 # Number input
 idade = st.number_input("A sua idade:", min_value=0, max_value=120, step=1)
 
+# Number input
+morada = st.text_input("A sua morada:")
+
 # Button
 if st.button("Mostrar mensagem"):
     if name:
-        st.success(f"Olá, {name}! Você tem {idade} anos.")
+        st.success(f"Olá, {name}! Tu tens {idade} anos e moras na {morada}")
     else:
         st.warning("Por favor, insira seu nome.")
 
