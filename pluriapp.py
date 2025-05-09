@@ -18,12 +18,8 @@ morada = st.text_input("A sua morada:")
 cidade = st.text_input("A sua cidade:")
 
 # Button
-if st.button("Mostrar mensagem"):
-    if name:
-        st.success(f"Olá, {name}! Tu tens {idade} anos e moras na {morada}")
-    else:
-        st.warning("Por favor, insira seu nome.")
-
+if st.button("Enviar balões"):
+    st.balloons()
 
 # File upload
 uploaded_file = st.file_uploader("Faça upload de um arquivo CSV", type="csv")
