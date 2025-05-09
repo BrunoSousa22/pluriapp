@@ -14,7 +14,7 @@ if st.button("Clicar aqui para uma surpresa"):
         if resposta1 == "Sim":
             st.balloons()
         elif resposta1 == "Não":
-            st.write("Nem sabes o que perdes")
+            st.write("Eu vi logo!")
 
     elif resposta == "Não":
         st.write("Nem sabes o que perdes")
