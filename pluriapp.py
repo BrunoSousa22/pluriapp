@@ -3,7 +3,7 @@ import pandas as pd
 
 # Page title
 st.set_page_config(page_title="Surpresa", layout="centered")
-st.title("Bem-vindaaaaaas 😃!")
+st.title("Bem-vindaaaaaa 😃!")
 
 # Initialize state
 if "clicou" not in st.session_state:
