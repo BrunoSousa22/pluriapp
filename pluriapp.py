@@ -5,30 +5,37 @@ import pandas as pd
 st.set_page_config(page_title="Demo App", layout="centered")
 st.title("🚀 Bem-vindo!")
 
-# Use session state to track the steps
-if "mostrar_pergunta_1" not in st.session_state:
-    st.session_state.mostrar_pergunta_1 = False
-if "mostrar_pergunta_2" not in st.session_state:
-    st.session_state.mostrar_pergunta_2 = False
+# Inicializar estado
+if "etapa" not in st.session_state:
+    st.session_state.etapa = 0
 
-# Button click
-if st.button("Clicar aqui para uma surpresa"):
-    st.session_state.mostrar_pergunta_1 = True
+# Etapa 0: Botão inicial
+if st.session_state.etapa == 0:
+    if st.button("Clicar aqui para uma surpresa"):
+        st.session_state.etapa = 1
 
-# First question
-if st.session_state.mostrar_pergunta_1:
+# Etapa 1: Primeira pergunta
+if st.session_state.etapa == 1:
     resposta = st.radio("Tens a certeza que estás pronto?", ["Sim", "Não"], key="pergunta1")
-
     if resposta == "Sim":
-        st.session_state.mostrar_pergunta_2 = True
+        st.session_state.etapa = 2
+        st.experimental_rerun()
     elif resposta == "Não":
-        st.write("Nem sabes o que perdes")
+        st.write("Nem sabes o que perdes 😢")
 
-# Second question
-if st.session_state.mostrar_pergunta_2:
-    resposta1 = st.radio("Certeza certezinha?", ["Sim", "Não"], key="pergunta2")
-    
-    if resposta1 == "Sim":
+# Etapa 2: Segunda pergunta
+if st.session_state.etapa == 2:
+    resposta2 = st.radio("Certeza certezinha?", ["Sim", "Não"], key="pergunta2")
+    if resposta2 == "Sim":
         st.balloons()
-    elif resposta1 == "Não":
-        st.write("Eu vi logo!")
+        st.success("🎉 Que bom que estavas pronto!")
+        st.session_state.etapa = 3
+    elif resposta2 == "Não":
+        st.write("Eu vi logo 😄")
+        st.session_state.etapa = 3
+
+# Etapa 3: Final
+if st.session_state.etapa == 3:
+    if st.button("Recomeçar"):
+        st.session_state.etapa = 0
+        st.experimental_rerun()
