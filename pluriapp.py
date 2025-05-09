@@ -53,4 +53,3 @@ elif st.session_state.etapa == 3:
         st.session_state.etapa = 0
         st.session_state.resposta1 = None
         st.session_state.resposta2 = None
-        st.experimental_rerun()
